@@ -1,0 +1,6 @@
+{
+  "name": "The Best Girlfriend Award",
+  "description": "An ultra-premium romantic interactive award ceremony dedicated to my beloved princess.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
