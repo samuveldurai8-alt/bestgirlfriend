@@ -4,8 +4,8 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import { SlidersHorizontal } from 'lucide-react';
 import { ParticleCanvas } from './components/ParticleCanvas';
-import { Navbar } from './components/Navbar';
 import { OpeningExperience } from './components/OpeningExperience';
 import { AwardHero } from './components/AwardHero';
 import { ReasonsSection } from './components/ReasonsSection';
@@ -98,13 +98,6 @@ export default function App() {
       {/* Floating Canvas with animated rose petals and golden sparkles */}
       <ParticleCanvas />
 
-      {/* Top Bar Navigation */}
-      <Navbar
-        onOpenSettings={() => setIsSettingsOpen(true)}
-        isPlayingMusic={isPlayingMusic}
-        onToggleMusic={handleToggleMusic}
-      />
-
       <main className="relative z-10">
         {/* 1. Full-screen Cinematic Opening */}
         <OpeningExperience
@@ -148,6 +141,18 @@ export default function App() {
           onReplayStory={handleReplayStory}
         />
       </main>
+
+      {/* Floating Personalization Quick Action */}
+      <button
+        onClick={() => setIsSettingsOpen(true)}
+        title="Personalize Award & Names"
+        className="fixed bottom-6 left-6 z-40 p-3 rounded-full border border-[#e5c158]/40 bg-[#1f0514]/80 backdrop-blur-md text-[#fef0cd] hover:bg-[#350717] hover:border-[#e5c158] transition-all shadow-lg flex items-center gap-2 group cursor-pointer"
+      >
+        <SlidersHorizontal className="w-4 h-4 text-[#e5c158]" />
+        <span className="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 text-xs font-cinzel tracking-wider">
+          Customize
+        </span>
+      </button>
 
       {/* Floating Music Controller */}
       <MusicController

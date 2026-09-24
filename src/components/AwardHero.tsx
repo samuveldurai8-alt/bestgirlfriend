@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Crown, Sparkles, Heart } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import trophyImage from '../assets/images/award_golden_trophy_1790255905312.jpg';
 
 interface AwardHeroProps {
   awardTitle: string;
@@ -99,10 +100,15 @@ export const AwardHero: React.FC<AwardHeroProps> = ({
               {/* The Trophy Artwork */}
               <div className="relative flex-1 w-full overflow-hidden flex items-center justify-center p-3">
                 <img
-                  src="/src/assets/images/award_golden_trophy_1790255905312.jpg"
+                  src={trophyImage}
                   alt="Golden Crown Trophy"
                   className="w-full h-full object-cover rounded-xl filter drop-shadow-[0_10px_25px_rgba(229,193,88,0.35)] group-hover:scale-105 transition-transform duration-700"
-                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.src.includes('public/assets/images')) {
+                      target.src = '/assets/images/award_golden_trophy_1790255905312.jpg';
+                    }
+                  }}
                 />
 
                 {/* Subtle shine gloss */}
