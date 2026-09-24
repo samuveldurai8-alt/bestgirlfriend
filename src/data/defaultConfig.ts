@@ -60,7 +60,7 @@ export const DEFAULT_AWARD_CONFIG: AwardConfig = {
   certificate: {
     officialTitle: "CERTIFICATE OF LOVE",
     awardType: "BEST GIRLFRIEND AWARD",
-    presentedTo: "MY PRINCESS ❤️",
+    presentedTo: "My Princess❤️",
     citation: "For being the sweetest, most beautiful, caring and irreplaceable part of my life.",
     signatureDate: "Always & Forever",
     endlessLoveText: "With endless love ❤️",
